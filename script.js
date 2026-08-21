@@ -66,27 +66,6 @@
     }
   }
 
-  // ===== Custom cursor =====
-  if (hasFinePointer && !prefersReducedMotion) {
-    document.body.classList.add('has-cursor');
-    const dot = document.getElementById('cursorDot');
-    const ring = document.getElementById('cursorRing');
-    let mx = window.innerWidth/2, my = window.innerHeight/2, rx = mx, ry = my;
-    window.addEventListener('mousemove', (e) => {
-      mx = e.clientX; my = e.clientY;
-      dot.style.left = mx + 'px'; dot.style.top = my + 'px';
-    });
-    (function ringLoop(){
-      rx += (mx - rx) * 0.18; ry += (my - ry) * 0.18;
-      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-      requestAnimationFrame(ringLoop);
-    })();
-    document.querySelectorAll('a, button, .tilt-card, input, select, textarea, .faq-q').forEach(el => {
-      el.addEventListener('mouseenter', () => ring.classList.add('hovering'));
-      el.addEventListener('mouseleave', () => ring.classList.remove('hovering'));
-    });
-  }
-
   // ===== Magnetic buttons =====
   if (hasFinePointer && !prefersReducedMotion) {
     document.querySelectorAll('.magnetic').forEach(btn => {
