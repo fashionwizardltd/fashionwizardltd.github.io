@@ -412,4 +412,4 @@
       status.style.color = '#a63a2e';
       status.textContent = 'Something went wrong. Please try again, or use the email link above.';
     }
-  });s
+  });
