@@ -406,10 +406,10 @@
         fileLabel.textContent = 'Click to attach a file (PDF, image, or doc)';
       } else {
         status.style.color = '#a63a2e';
-        status.textContent = 'Something went wrong. Please email us directly at info@fashionwizardltd.com.';
+        status.textContent = 'Something went wrong. Please try again, or use the email link above.';
       }
     } catch (err) {
       status.style.color = '#a63a2e';
-      status.textContent = 'Something went wrong. Please email us directly at info@fashionwizardltd.com.';
+      status.textContent = 'Something went wrong. Please try again, or use the email link above.';
     }
   });
