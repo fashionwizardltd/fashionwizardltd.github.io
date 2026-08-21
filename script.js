@@ -14,6 +14,25 @@
   window.addEventListener('scroll', updateScrollProgress, { passive:true });
   updateScrollProgress();
 
+  // ===== Header shrink on scroll =====
+  const siteHeader = document.querySelector('header');
+  function updateHeaderScrolled(){
+    if (!siteHeader) return;
+    if (window.scrollY > 40) siteHeader.classList.add('scrolled');
+    else siteHeader.classList.remove('scrolled');
+  }
+  window.addEventListener('scroll', updateHeaderScrolled, { passive:true });
+  updateHeaderScrolled();
+
+  // ===== Back to top =====
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('show', window.scrollY > 900);
+    }, { passive:true });
+    backToTop.addEventListener('click', () => window.scrollTo({ top:0, behavior: prefersReducedMotion ? 'auto' : 'smooth' }));
+  }
+
   // ===== Scroll cue fade =====
   const scrollCue = document.getElementById('scrollCue');
   if (scrollCue) {
