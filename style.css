@@ -185,7 +185,6 @@
     background-image: repeating-linear-gradient(115deg, rgba(20,20,18,0.02) 0px, rgba(20,20,18,0.02) 1px, transparent 1px, transparent 34px);
     pointer-events:none;
   }
-  #heroCanvas{ position:absolute; inset:0; z-index:0; width:100%; height:100%; }
   .hero-grid{
     display:grid; grid-template-columns: 1.15fr 0.85fr; gap:60px; align-items:end;
     position:relative; z-index:1;
@@ -462,14 +461,13 @@
   }
   .process-step{ text-align:left; }
   .process-dot{
-    width:16px; height:16px; border-radius:50%; background:var(--paper); border:2px solid var(--brick);
+    width:10px; height:10px; border-radius:50%; background:var(--brick);
     margin-bottom:22px; position:relative;
   }
-  .process-dot::after{ content:""; position:absolute; inset:3px; border-radius:50%; background:var(--brick); }
   .process-step h3{ font-size:15.5px; color:var(--forest-deep); transition:color .3s ease; }
   .process-step p{ font-size:12.5px; color:#4a544e; margin-top:8px; }
   .process-step.active h3{ color:var(--red); }
-  .process-step.active .process-dot{ transform:scale(1.25); box-shadow:0 0 0 5px rgba(198,42,38,0.14); }
+  .process-step.active .process-dot{ transform:scale(1.4); box-shadow:0 0 0 5px rgba(198,42,38,0.14); }
   .process-dot{ transition:transform .3s ease, box-shadow .3s ease; }
   @media (max-width:900px){
     .process-track{ grid-template-columns:1fr; gap:30px; }
