@@ -50,19 +50,6 @@
     z-index:300; transition:width .08s linear;
   }
 
-  /* ===== Custom cursor ===== */
-  .cursor-dot, .cursor-ring{
-    position:fixed; top:0; left:0; pointer-events:none; z-index:299;
-    transform:translate(-50%,-50%); border-radius:50%;
-  }
-  .cursor-dot{ width:6px; height:6px; background:var(--red); transition:background .2s ease, transform .12s ease; }
-  .cursor-ring{
-    width:34px; height:34px; border:1px solid rgba(26,26,24,0.35);
-    transition:width .2s ease, height .2s ease, border-color .2s ease, transform .05s linear, opacity .2s ease;
-  }
-  .cursor-ring.hovering{ width:56px; height:56px; border-color:var(--green); }
-  @media (max-width:900px){ .cursor-dot, .cursor-ring{ display:none; } }
-
   /* ===== Spotlight glow on dark sections ===== */
   .section-dark{ position:relative; overflow:hidden; }
   .section-dark::before{
@@ -285,19 +272,6 @@
   .brand-mark{ transition:transform .4s ease; }
   .brand:hover .brand-mark{ animation:wiggle .5s ease; }
   @keyframes wiggle{ 0%,100%{ transform:rotate(0deg); } 25%{ transform:rotate(-8deg); } 75%{ transform:rotate(8deg); } }
-
-  /* Traveling pulse along process thread */
-  .thread-pulse{
-    position:absolute; top:31px; left:0; width:14px; height:14px; border-radius:50%;
-    background:radial-gradient(circle, rgba(198,42,38,0.9), rgba(198,42,38,0));
-    animation: pulseTravel 4.5s linear infinite; z-index:0;
-  }
-  @keyframes pulseTravel{ 0%{ left:0%; opacity:0; } 8%{ opacity:1; } 92%{ opacity:1; } 100%{ left:100%; opacity:0; } }
-  @media (max-width:900px){
-    .thread-pulse{ top:0; left:7px; width:12px; height:12px; animation-name:pulseTravelV; }
-    @keyframes pulseTravelV{ 0%{ top:0%; opacity:0; } 8%{ opacity:1; } 92%{ opacity:1; } 100%{ top:100%; opacity:0; } }
-  }
-  @media (prefers-reduced-motion: reduce){ .thread-pulse{ display:none; } }
 
   /* Reveal direction variants */
   .reveal-left{ opacity:0; transform:translateX(-32px); transition:opacity .7s ease, transform .7s ease; }
